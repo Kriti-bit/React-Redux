@@ -36,6 +36,17 @@
                 console.log('Do not Copy');
             }
 
+            handleChange = (e) =>{
+                this.setState({
+                    name:e.target.value
+                })
+            }
+
+            handleSubmit = (e) =>{
+                e.preventDefault(); //The default action here is to refresh the page on pressing submit
+                console.log('form submitted',this.state.name);
+            }
+
             render(){
                 return (
                     <div className="app-content">  
@@ -46,6 +57,11 @@
                         {/* While calling a function we don't use () i.e. handleClick(), bec that will call the function even before the page loads | This refers to the component*/}
                         <button onMouseOver={this.handleMouseOver}>Hover me</button>
                         <p onCopy={this.handleCopy}>Text Here</p>
+                        {/*If we use onClick in button instead of onSubmit, enter will not be detected as submit*/}
+                        <form onSubmit={this.handleSubmit}>  
+                            <input type="text" onChange={this.handleChange} />
+                            <button>Submit</button>
+                        </form>
                     </div>    
                 )
             }
