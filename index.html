@@ -19,19 +19,20 @@
                 age : 30
             }
 
-            handleClick(e)
-            {
+            handleClick = (e) => {
                 console.log(e.target);
-                // console.log(this.state); --> will not work
+                //setState is used to update one/all properties of the state | Changes to the state are reflected everywhere
+                this.setState({
+                    name : 'ABCD'
+                })
+                console.log(this.state); //this will work only when we use arrow functions
             }
 
-            handleMouseOver(e)
-            {
+            handleMouseOver = (e) => {
                 console.log(e.target , e.pageX);
             }
 
-            handleCopy(e)
-            {
+            handleCopy = (e) => {
                 console.log('Do not Copy');
             }
 
