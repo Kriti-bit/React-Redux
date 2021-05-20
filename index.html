@@ -13,16 +13,37 @@
     <div id = "app"></div>
         <script type="text/babel">
         class App extends React.Component {
+
             state = {
                 name : 'ABC',
                 age : 30
             }
+
+            handleClick(e)
+            {
+                console.log(e.target);
+            }
+
+            handleMouseOver(e)
+            {
+                console.log(e.target , e.pageX);
+            }
+
+            handleCopy(e)
+            {
+                console.log('Do not Copy');
+            }
+
             render(){
                 return (
                     <div className="app-content">  
                         <h1> Hey</h1>
                         <p> Random Number : { Math.random() * 10 } </p> {/* {} signifies javascript code */}
                         <p> Name  enteres in the state is { this.state.name } and the age is { this.state.age } </p> {/* Here, this refers to the compenent itself and the state is the state */}
+                        <button onClick={this.handleClick}> Click Me</button> {/* List of Events -> https://reactjs.org/docs/events.html#supported-events*/}
+                        {/* While calling a function we don't use () i.e. handleClick(), bec that will call the function even before the page loads | This refers to the component*/}
+                        <button onMouseOver={this.handleMouseOver}>Hover me</button>
+                        <p onCopy={this.handleCopy}>Text Here</p>
                     </div>    
                 )
             }
