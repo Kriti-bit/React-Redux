@@ -4,7 +4,7 @@ import Ninjas from './Ninjas'
 class App extends Component {
   state = {
     ninjas : [
-      {name :'abc' , age : 25 , belt : 'black' , id:1},
+      {name :'abc' , age : 15 , belt : 'black' , id:1},
       {name :'def' , age : 30 , belt : 'green' , id:2},
       {name :'ghi' , age : 35 , belt : 'purple' , id:3}
     ]
