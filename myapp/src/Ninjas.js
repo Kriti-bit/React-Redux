@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Ninjas = ({ninjas}) => {
+const Ninjas = ({ ninjas, deleteNinja }) => {
         //console.log(this.props)
         //Destructuring the props
         //const { name , age , belt } = this.props;
@@ -40,6 +40,7 @@ const Ninjas = ({ninjas}) => {
                                 <div> { ninja.name } </div>
                                 <div> {ninja.age } </div>
                                 <div> {ninja.belt } </div>
+                                <button onClick = { () => { deleteNinja(ninja.id) }} > Delete Ninja </button>
                             </div>
                         ) : null;
                     }) 

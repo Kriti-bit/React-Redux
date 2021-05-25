@@ -17,12 +17,25 @@ class App extends Component {
       ninjas : ninjas
     })
   }
+
+deleteNinja = (id) => {
+  //console.log(id) ---> Gives the id of the ninja
+
+  let ninjas = this.state.ninjas.filter(ninja => {
+    return ninja.id !== id
+  });
+//We are not using the destructive method here
+  this.setState({
+    ninjas : ninjas
+  })
+}
+
   render () {
   return (
     <div className="App">
               <h1>My First React App</h1>
               <p>Welcome</p>
-              <Ninjas ninjas = { this.state.ninjas } />
+              <Ninjas ninjas = { this.state.ninjas } deleteNinja={this.deleteNinja} />
               <AddNinja addNinja = { this.addNinja } />
     </div>
   );
