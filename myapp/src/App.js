@@ -27,7 +27,7 @@ deleteNinja = (id) => {
 //We are not using the destructive method here
   this.setState({
     ninjas : ninjas
-  })
+  });
 }
 
   render () {
