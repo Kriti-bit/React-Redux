@@ -30,6 +30,17 @@ deleteNinja = (id) => {
   });
 }
 
+  componentDidMount()
+  {
+    console.log('component Mounted');
+  }
+
+  componentDidUpdate(prevProps, prevState)
+  {
+    console.log('component updated');
+    console.log(prevProps,prevState);
+  }
+
   render () {
   return (
     <div className="App">
